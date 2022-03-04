@@ -13,9 +13,9 @@ int main(int argc, char *argv[]) {
 	
 	//GetTgl dari D1
 	printf("\n\n=============Get==============");
-	printf("\nTanggal dari D1 : %d\n",GetTgl(D1));
+	printf("\nTanggal dari D1 : %d",GetTgl(D1));
 	//GetBln dari D1
-	printf("Bulan dari D1 : %d\n",GetBln(D1));
+	printf("\nBulan dari D1 : %d\n",GetBln(D1));
 	//GetThn dari D1
 	printf("Tahun dari D1 : %d\n",GetThn(D1));
 
