@@ -124,7 +124,7 @@ mengembalikan nilai integer
 panjang dihitung dari nilai titik awal dan titik akhirnya
 */
 int LineLength(LINE line){
-	Jarak(GetPointStart(line),GetPointEnd(line));
+	Jarak(GetPointStart(line), GetPointEnd(line));
 }
 
 /*Prosedur untuk mereset Line menjadi nilai null*/
