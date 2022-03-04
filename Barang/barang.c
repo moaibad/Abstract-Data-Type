@@ -17,7 +17,7 @@ char *GetNamaBarang(BARANG barang){
 }
 
 void SetHargaBarang(BARANG barang, long harga){
-	barang.harga = harga;
+	barang.harga=harga;
 }
 
 int GetHargaBarang(BARANG barang){
