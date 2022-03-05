@@ -194,6 +194,21 @@ void InsVLast (List * L, infotype X){
 	}
 }
 
+void InsVAfter(List * L, infotype X, infotype Y){
+	address P,Prec;
+	
+	P = Alokasi(X);
+	Prec = Search(*L,Y);
+	if(Prec!=Nil){
+		Next(P) = Next(Prec) ;
+        Next(Prec) = P ;
+	}
+	else{
+		printf("Elemen tidak ditemukan!");
+		getch();
+	}
+}
+
 
 /**** Penghapusan sebuah elemen ****/
 void DelFirst (List * L, address * P){
@@ -288,7 +303,7 @@ void PrintInfo (List L){
 	address P;
 	
 	if(ListEmpty(L)){
-		printf("List Kosong \n");
+		printf("List Kosong");
 	}
 	else{
 		P = First(L);
@@ -296,7 +311,7 @@ void PrintInfo (List L){
 			printf("%d, ",Info(P));
 			P = Next(P);
 		}
-		printf("%d\n",Info(P));
+		printf("%d",Info(P));
 	}
 }
 
@@ -305,6 +320,7 @@ int NbElmt (List L){
 	address P;
 	int element = 0;
 	
+	P = First(L);
 	while(P != Nil){
 		element++;
 		P = Next(P);
@@ -388,46 +404,32 @@ infotype Average (List L){
 
 void DelAll (List * L){
 /* Delete semua elemen list dan alamat elemen di dealokasi */
-	free(L);
+	address P;
+
+    P = First(*L);
+    while (P != Nil) {
+      First(*L) = Next(First(*L));
+      Next(P) = Nil;
+      DeAlokasi(P);
+      P = First(*L);
+    }
 }
 
-void InversList (List * L){
+void InversList (List * L);
 /* IS : L sembarang */
 /* FS : Elemen List dibalik : elemen terakhir menjadi elemen pertama, dst */
 /*	Membalik elemen list, tanpa melakukan alokasi / dealokasi */
-	address P,Q,R;
-	
-	P = First(*L);
-	Q = Nil;
-	
-	while(P != Nil){
-		R = Next(P);
-		Next(P) = Q;
-		Q = P;
-		P = R;
-	}
-	First(*L) = Q;
-}
 
-List FInversList (List L){
+List FInversList (List L);
 /* Mengirimkan list baru, hasil invers dari L */
-	InversList(&L);
-	return L;
-}
 
-void CopyList (List L1, List * L2){
+void CopyList (List L1, List * L2);
 /* IS : L1 sembarang */
 /* FS : L2 = l1 */
 /* L1 dan L2 "menunjuk" ke list yang sama, Tidak ada alokasi / dealokasi */
-	*L2 = L1;
-}
 
-List FCopyList (List L){
+List FCopyList (List L);
 /* Mengirimkan List yang merupakan salinan L */
-	List Copied;
-	CopyList(L,&Copied);
-	return Copied;
-}
 
 void CpAlokList (List Lin, List * Lout);
 /* IS : Lin Sembarang */

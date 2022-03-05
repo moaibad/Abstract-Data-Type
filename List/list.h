@@ -213,5 +213,6 @@ void PecahList (List * L1, List * L2, List L);
 /* L1 berisi separuh elemen L dan L2 berisi sisa elemen L */
 /* Jika elemen L ganjil , maka separuh adalah NbElmt (L) div 2 */
 
+void InsVAfter(List * L, infotype X, infotype Prec);
 #endif
 
