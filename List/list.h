@@ -1,4 +1,4 @@
-/* File        : list1.h */
+/* File        : list.h */
 /* Deskripsi   : ADT list berkait dengan representasi fisik pointer */
 /*		 Representasi address dengan pointer */
 /*		 InfoType adalah integer */

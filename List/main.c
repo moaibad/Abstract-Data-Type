@@ -88,9 +88,13 @@ int main(int argc, char *argv[]) {
 					printf("Nilai rata-rata elemen pada list adalah : %d",Average(List));
 					getch();
 					break;	
+				case 12 :
+					printf("Program dihentikan!");
+					break;
+				default : printf("Masukan insert yang valid!");break;
 			}
 		
-		}while(pilihMenu != 15);
+		}while(pilihMenu != 12);
 				
 		
 		case 'N' : return 0; 	
@@ -111,6 +115,7 @@ void Menu(){
 	printf("9. Mencari nilai maksimal elemen pada list\n");
 	printf("10. Mencari nilai minimal elemen pada list\n");
 	printf("11. Mencari nilai rata-rata elemen pada list\n");
+	printf("12. Keluar Program");
 	
 	printf("\nPilihan : ");
 }
