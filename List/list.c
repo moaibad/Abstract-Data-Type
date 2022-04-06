@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
-
 /**** Predikat untuk test keadaan LIST  ****/
 boolean ListEmpty (List L){
 	/* Mengirim true jika List Kosong */
@@ -289,7 +288,6 @@ void DelVLast (List * L, infotype * X){
 /* 	dan alamat elemen terakhir di dealokasi */
 	address P;
 	
-	DelLast(L,&P);
 	*X = Info(P);
 	DeAlokasi(P);
 }
