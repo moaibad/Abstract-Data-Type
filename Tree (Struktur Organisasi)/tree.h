@@ -6,8 +6,8 @@
     Compiler        : TDM-GCC 4.9.2
 */
 
-#ifndef nbtree_d_H
-#define nbtree_d_H
+#ifndef tree_H
+#define tree_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
